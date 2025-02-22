@@ -1,0 +1,36 @@
+#include<iostream>
+using namespace std;
+template <class t>
+class biggest
+{
+    private:
+    t a;
+    t b;
+    public:
+    biggest(t i,t j)
+    {
+        a=i;
+        b=j;
+        cout<<"the values of a:"<<a<<endl;
+        cout<<"the value of B:"<<b<<endl;
+        if(a>b)
+        {
+            cout<<"the biggest value:"<<a<<endl;
+        }
+        else{
+            cout<<"the biggest value:"<<b<<endl;
+        }
+    }
+    ~biggest()
+    {
+        cout<<"the values destroyed after";
+    }
+    
+    
+};
+int main()
+{
+    biggest <int>obj(10,30);
+    
+    return 0;
+}
