@@ -1,0 +1,33 @@
+#include <iostream>
+using namespace std;
+class student{
+    private:
+    int age;
+    string name;
+    string last_name;
+    int std;
+    public:
+    void getdata();
+    void putdata();
+};
+void student::getdata()
+{
+    cin>>age;
+    cin>>name;
+    cin>>last_name;
+    cin>>std;
+}
+void student::putdata()
+{
+    cout<<age<<endl;
+    cout<<last_name<<','<<' '<<name<<endl;
+    cout<<std<<endl;
+    cout<<age<<','<<name<<','<<last_name<<','<<std;
+}
+int main()
+{
+    student s;
+    s.getdata();
+    s.putdata();
+    return 0;
+}
