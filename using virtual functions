@@ -1,0 +1,48 @@
+#include <iostream>
+
+using namespace std;
+class Rectangle{
+    public:
+    int height;
+    int width;
+    void read_input()
+    {
+        cin>>height;
+        cin>>width;
+    }
+    virtual int display()
+    {
+        cout<<height<<" "<<width<<endl;
+    return 0;
+}
+};
+class RectangleArea:public Rectangle{
+    private:
+    int area;
+    public:
+    int display()
+    {
+        area=height*width;
+        cout<<area<<endl;
+        return 0;
+    }
+};
+
+int main()
+{
+    
+    RectangleArea r_area;
+    
+    
+    r_area.read_input();
+    
+    
+    r_area.Rectangle::display();
+    
+    /*
+     * Print the area
+     */
+    r_area.display();
+    
+    return 0;
+}
