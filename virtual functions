@@ -1,0 +1,40 @@
+#include<iostream>
+using namespace std;
+class student{
+    public:
+     void display()
+    {
+        cout<<"one"<<endl;
+    }
+};
+class acadamic:public student
+{
+    public:
+  void display()
+    {
+        cout<<"two"<<endl;
+    }
+};
+class result:public acadamic
+{
+void display()
+{
+    cout<<"threee"<<endl;
+}
+};
+int main()
+{
+    student s;
+    acadamic a;
+    result r;
+    student *ptr[3];
+    ptr[0]=&s;
+    ptr[1]=&a;
+    ptr[2]=&r;
+    for(int i=0;i<3;i++)
+    {
+        ptr[i]->display();
+    }
+    return 0;
+    
+}
