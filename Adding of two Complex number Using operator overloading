@@ -1,0 +1,48 @@
+#include<iostream>
+using namespace std;
+class complex{
+    private:
+    float image,real;
+    public:
+    complex()
+    {
+        real=0;
+        image=0;
+    }
+    complex(float i,float r)
+    {
+        real=r;
+        image=i;
+    }
+    complex(float a)
+    {
+        real=a;
+        image=a;
+    }
+    void show()
+    {
+        cout<<"The complex value is:"<<real<<"+J"<<image<<endl;
+        
+    }
+    complex operator+(complex &p)
+    {
+        complex w;
+        w.real=real+p.real;
+        w.image=image+p.image;
+        return w;
+    }
+};
+    
+  int main()
+  {
+      complex C(10,30);
+      C.show();
+      complex c(10);
+      c.show();
+      complex M;
+      M=C+c;
+      M.show();
+      return 0;
+      
+      
+  }
