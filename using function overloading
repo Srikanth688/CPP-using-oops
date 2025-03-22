@@ -1,0 +1,41 @@
+#include<iostream>
+using namespace std;
+float areacalculation(float l,float b)
+{
+    return l*b;
+}
+double areacalculation(double r)
+{
+    return 3.14*r*r;
+}
+double areacalculation(float h,double base)
+{
+    return 0.5*base*h;
+}
+
+
+int main()
+{
+    float length=2;
+    float breadth=3;
+    cout<<"the area of rectangle:"<<areacalculation(length,breadth)<<endl;
+    cout<<"the area of triangle:"<<areacalculation(2,3.45)<<endl;
+    cout<<"area of circles:"<<areacalculation(2);
+    return 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
