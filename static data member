@@ -1,0 +1,40 @@
+#include<iostream>
+using namespace std;
+class abc{
+    private:
+    static int count;
+    int number;
+    public:
+    void getdata(int a)
+    {
+        number=a;
+        count++;
+    }
+    void getcount()
+    {
+        cout<<"count:";
+        cout<<count<<endl;
+    }
+};
+int abc::count;
+
+int main()
+{
+    abc a;
+    abc b;
+    abc c;
+    a.getcount();
+    b.getcount();
+    c.getcount();
+    cout<<"after static;"<<endl;
+    a.getdata(1);
+    
+    b.getdata(2);
+    c.getdata(2);
+    a.getcount();
+    b.getcount();
+    c.getcount();
+    return 0;
+    
+    
+}
