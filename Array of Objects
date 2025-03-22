@@ -1,0 +1,86 @@
+#include<iostream>
+using namespace std;
+class student{
+    private:
+    char name[50];
+    int age;
+    int roll;
+    int marks[6];
+    int total;
+    float percent;
+    public:
+    void  getdata()
+    {
+        total=0;
+    
+        cout<<"enter the name:";
+        cin>>name;
+        cout<<"enter the age:";
+        cin>>age;
+        cout<<"enter the roll:";
+        cin>>roll;
+        cout<<"enter the marks:";
+        for(int i=0;i<6;i++)
+        {
+            cin>>marks[i];
+        }
+        for(int i=0;i<6;i++)
+        {
+            total+=marks[i];
+        }
+    
+        percent=((float(total))/500)*100;
+        
+    } 
+        
+    void display()
+    {
+        cout<<"Name:"<<name<<endl;
+        cout<<"Age:"<<age<<endl;
+        cout<<"ROLL:"<<roll<<endl;
+        for(int i=0;i<6;i++)
+        {
+            cout<<"Marks:"<<marks[i]<<endl;
+        }
+        cout<<"the total marks:"<<total<<endl;
+        cout<<"the percentage:"<<percent<<endl;
+        
+    }
+    int greater()
+    {
+        if(percent>70)
+        {
+            cout<<"Name:"<<name<<endl;
+            cout<<"age:"<<age<<endl;
+            cout<<"percentage:"<<percent<<endl;
+            cout<<"total:"<<total<<endl;
+            
+        }
+        return 0;
+    }
+    
+};
+
+
+int main()
+{
+    int n;
+    cin>>n;
+    student s[n];
+    for(int i=0;i<n;i++)
+    {
+        s[i].getdata();
+    }
+    for(int i=0;i<n;i++)
+    {
+        s[i].display();
+    }
+    if(n>=1)
+    {
+    for(int i=0;i<n;i++)
+    {
+        s[i].greater();
+    }
+    }
+    return 0;
+}
