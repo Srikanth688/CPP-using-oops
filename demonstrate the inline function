@@ -1,0 +1,33 @@
+#include<iostream>
+#include<cstring>
+using namespace std;
+int age;
+char name[20];
+char address[50];
+float salary;
+inline int getdata(const char n[],const char a[],int g,float s)
+{
+    
+ age=g;
+salary=s;
+    
+    strcpy(name,n);
+    strcpy(address,a);
+    return 0;
+    
+}
+inline void display()
+{
+    cout<<"the name:"<<name<<endl;
+    cout<<"the age:"<<age<<endl;
+    cout<<"the salary"<<salary<<endl;
+    cout<<"the address:"<<address<<endl;
+}
+
+int main()
+{
+    getdata("srikanth","kotappakonda",20,20000);
+    display();
+    
+    return 0;
+}
