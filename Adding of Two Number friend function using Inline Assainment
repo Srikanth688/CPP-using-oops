@@ -1,0 +1,30 @@
+#include<iostream>
+using namespace std;
+class inliner{
+    private:
+    int a;
+    int b;
+    public:
+    void getdata()
+    {
+        cout<<"enter the value of A:";
+        cin>>a;
+        cout<<"enter the value of B:";
+        cin>>b;
+        
+    }
+    friend int sum(inliner i);
+};
+inline int sum(inliner i)
+{
+    return i.a+i.b;
+}
+int main()
+{
+    inliner l;
+    l.getdata();
+    int s;
+    s=sum(l);
+    cout<<"sum of two number using inline assainment:"<<s;
+    return 0;
+}
