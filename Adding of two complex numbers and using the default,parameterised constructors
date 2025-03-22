@@ -1,0 +1,48 @@
+#include<iostream>
+using namespace std;
+class complex{
+    private:
+    float image;
+    float real;
+    public:
+    complex()
+    {
+        real=0;
+        image=0;
+    }
+    complex(float i)
+    {
+        real=i;
+        image=i;
+    }
+    complex(float im,float r)
+    {
+        image=im;
+        real=r;
+    }
+complex add(complex b)
+{
+    complex c;
+    c.image=image+b.image;
+    c.real=real+b.real;
+    return c;
+}
+void display(complex d)
+{
+    cout<<d.real<<"+j"<<d.image<<endl;
+}
+};
+int main()
+{
+    complex f;
+    complex s(2);
+    complex t(2,5);
+    complex x;
+    s.display(s);
+    t.display(t);
+    
+    x=s.add(t);
+
+    x.display(x);
+    
+}
