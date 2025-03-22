@@ -1,0 +1,51 @@
+#include<iostream>
+using namespace std;
+class great{
+    private:
+    int number1;
+    int number2;
+    int number3;
+    public:
+    void getdata()
+    {
+        cout<<"enter the value of number1:";
+        cin>>number1;
+        cout<<"enter the value of number2:";
+        cin>>number2;
+        cout<<"enter the value of number3";
+        cin>>number3;
+        
+    }
+    friend int greatest(great s);
+};
+int greatest(great s)
+{
+    int greatest_num;
+    if(s.number1>s.number2)
+    {
+        if(s.number1>s.number3)
+        {
+            greatest_num=s.number1;
+        }else{
+            greatest_num=s.number3;
+        }
+    }else{
+        if(s.number2>s.number3)
+        {
+            greatest_num=s.number2;
+            
+        }else{
+            greatest_num=s.number3;
+        }
+    }
+    return greatest_num;
+    
+}
+int main()
+{
+    great g;
+    g.getdata();
+    int number=greatest(g);
+    cout<<"the greatest number:"<<number;
+    return 0;
+}
