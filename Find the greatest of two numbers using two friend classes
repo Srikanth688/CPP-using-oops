@@ -1,0 +1,42 @@
+#include<iostream>
+using namespace std;
+class abc;
+class xyz{
+    private:
+    int i;
+    public:
+    void getdata()
+    {
+        i=100;
+    }
+    friend void max(abc,xyz);
+};
+class abc{
+    private:
+    int j;
+    public:
+    void getdata()
+    {
+        j=30;
+    }
+    friend void max(abc,xyz);
+};
+void max(abc x,xyz y)
+{
+    if(x.j>y.i)
+    {
+        cout<<"the greatest number is:"<<x.j;
+    }
+    else{
+        cout<<"the greatest number is:"<<y.i;
+    }
+}
+int main()
+{
+    abc k;
+    k.getdata();
+    xyz l;
+    l.getdata();
+    max(k,l);
+    return 0;
+}
