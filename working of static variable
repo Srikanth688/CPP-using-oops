@@ -1,0 +1,26 @@
+#include<iostream>
+using namespace std;
+class demo
+{
+    public:
+    int x;
+    static int i;
+    
+};
+int demo::i;
+int main()
+{
+    cout<<"initialised value of I:"<<demo::i<<endl;
+    demo obj1,obj2;
+    obj1.x=10;
+    obj1.i=20;
+    obj2.x=30;
+obj2.i=90;
+    cout<<"value of X:"<<obj1.x<<endl;
+    cout<<"value of x:"<<obj2.x<<endl;
+    cout<<"value of i: "<<obj1.i<<endl;
+    cout<<"value of i:"<<obj2.i<<endl;
+    cout<<"value of i:"<<demo::i<<endl;
+    return 0;
+    
+}
