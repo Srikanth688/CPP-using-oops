@@ -1,0 +1,15 @@
+#include<iostream>
+#include<fstream>
+using namespace std;
+int main()
+{
+    ofstream out("tst");
+    if(!out)
+    {
+        cerr<<"THE FILE OF not opened:";
+    }
+    else{
+        cerr<<"The file is opened:";
+    }
+    return 0;
+}
