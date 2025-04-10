@@ -1,0 +1,26 @@
+#include<iostream>
+#include<fstream>
+#include<string>
+using namespace std;
+int main()
+{
+    char name[32];
+    int age;
+    ofstream out;
+    out.open("open",ios::out|ios::binary);
+    cout<<"Enter the name:";
+    cin.getline(name,32);
+    cout<<"Enter the age:";
+    cin>>age;
+    out<<name;
+    out<<age;
+    out.close();
+    ifstream in;
+    in.open("open",ios::in|ios::binary);
+    in>>name;
+    in>>age;
+    cout<<"The name:"<<name<<endl;
+    cout<<"The age:"<<age<<endl;
+    in.close();
+    return 0;    
+}
