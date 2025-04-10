@@ -1,0 +1,24 @@
+#include<iostream>
+#include<fstream>
+using namespace std;
+int main()
+{
+    char name[32];
+    ofstream out;
+    out.open("hp",ios::out);
+    cout<<"Enter the name:";
+    cin.getline(name,32);
+    out<<name;
+    out.close();
+    
+    ifstream in;
+    in.open("hp",ios::in);
+    int r;
+    while(in.eof()==0)
+    {
+        in>>name;
+        r=in.tellg();
+        cout<<"The values of R:"<<r<<endl;
+    }
+    return 0;    
+}
