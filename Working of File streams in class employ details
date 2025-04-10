@@ -1,0 +1,47 @@
+#include<iostream>
+#include<fstream>
+using namespace std;
+class emp{
+    private:
+    int age;
+    string name;
+    public:
+    void getdata()
+    {
+        cout<<"Enter the Age:"<<endl;
+        cin>>age;
+        cout<<"Enter the name:"<<endl;
+        cin>>name;
+    }
+    void display()
+    {
+        cout<<"THE AGE:"<<age<<endl;
+        cout<<"THE NAME:"<<name<<endl;
+    }
+};
+int main()
+{
+    int n,i;
+    cin>>n;
+    emp e[n];
+    ofstream out;
+    out.open("emp.txt");
+    cout<<"THE Details:"<<endl;
+    for(i=1;i<n;i++)
+    {
+        e[i].getdata();
+        out.write((char*)&e,sizeof(e));
+        
+    }
+    out.close();
+    ifstream in("emp.txt");
+    
+    for(i=1;i<n;i++)
+    {
+        e[i].display();
+        in.read((char*)&e,sizeof(e));
+    }
+    
+    in.close();
+    return 0;
+}
