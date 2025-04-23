@@ -1,0 +1,31 @@
+#include<iostream>
+#include<fstream>
+using namespace std;
+int main()
+{
+    string sourcefile;
+    string destinyfile;
+    cout<<"Enter the sourcefile:";
+    cin>>sourcefile;
+    cout<<"Enter the destiny file:";
+    cin>>destinyfile;
+    ifstream in(sourcefile);
+    ofstream out(destinyfile);
+    if(!in)
+    {
+        cout<<"source file is not found:";
+        return 1;
+    }
+    if(!out)
+    {
+        cout<<"Destination file is not found";
+        return 1;
+    }
+char ch;
+    while(in.get(ch))
+    {
+        out.put(ch);
+    }
+    cout<<"Copied Successfully";
+    return 0;
+}
