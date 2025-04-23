@@ -1,0 +1,31 @@
+/*#include<iostream>
+#include<fstream>
+using namespace std;
+int main()
+{
+    int age;
+    string name;
+    ofstream out;
+    out.open("edp.txt",ios::binary);
+    cout<<"Enter the name:";
+    cin>>name;
+    cout<<"Enter the age:";
+    cin>>age;
+    out<<name<<endl;
+    out<<age<<endl;
+    out.close();
+    ofstream ou;
+    ou.open("edp.txt",ios::app);
+    cout<<"Enter the name:";
+    cin>>name;
+    ou<<name;
+    out.close();
+    ifstream in;
+    in.open("edp.txt",ios::binary);
+    in>>name;
+    in>>age;
+    cout<<"Name:"<<name<<endl;
+    cout<<"Age:"<<age<<endl;
+    in.close();
+    return 0;
+}
