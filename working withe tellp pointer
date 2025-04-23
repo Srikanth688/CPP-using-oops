@@ -1,0 +1,31 @@
+#include<iostream>
+#include<fstream>
+using namespace std;
+int main()
+{
+    string name;
+    ofstream out;
+    out.open("open.txt");
+    cout<<"Enter the name:";
+    cin>>name;
+int w;    
+    while(out.eof()==1){
+        out<<name;
+        w=out.tellp();
+        cout<<w<<endl;
+    }
+    out.close();
+    ifstream in;
+    in.open("open.txt");
+    int r;
+    while(in.eof()==0)
+    {
+        in>>name;
+        r=in.tellg();
+        cout<<r<<endl;
+    }
+    
+    in.close();
+    return 0;
+    
+}
